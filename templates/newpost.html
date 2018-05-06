@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 allign='center'>New Post</h1>
+    <form action='/newpost' method='post'>
+        <p>Title</p>
+        <br>
+        <input type="text" name = 'post_title' value='{{title}}' />
+        <br><span class='error'>{{title_error}}</span>
+
+        <br>
+        <br>
+
+        <p>Body</p>
+        <br>
+        <input type="text" name = 'post_body' value='{{body}}' />
+        <br><span class='error'>{{body_error}}</span>
+        <br>
+        <input type='submit' value='Make Post' />
+
+    </form>
+
+{% endblock %}
