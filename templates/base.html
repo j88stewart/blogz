@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title>BlogZ</title>
+        <style>
+            .error {
+                color: red;
+            }
+        </style>
+    </head>
+<body>
+
+    <div>
+        <a href='/blog'>Main</a>
+        <a href='/newpost'>New Post</a>
+        <a href='/'>Index</a>
+        <a href='/login'>Login</a>
+        <a href='/signup'>Signup</a>
+        <a href='/logout'>Logout</a>
+    </div>
+    <!-- todo: check if 'username' in session, 
+        yes> Logged in as 'username'
+        no> Not logged in -->
+   
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+        {% for category,message in messages %}
+            <li class="{{category}}">{{message}}</li>
+        {% endfor %}
+        </ul>
+    {% endwith %}
+   
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

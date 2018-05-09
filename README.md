@@ -1,1 +1,1 @@
-# blogz
+# build-a-blog
